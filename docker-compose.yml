@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: psychoworkbook-api
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/psychoworkbook?schema=public
+      - JWT_SECRET=${JWT_SECRET:-change-this-in-production}
+      - NODE_ENV=production
+      - PORT=3001
+      - CORS_ORIGIN=${CORS_ORIGIN:-http://localhost:3000}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - psychoworkbook-network
+
+  db:
+    image: postgres:15-alpine
+    container_name: psychoworkbook-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=psychoworkbook
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - psychoworkbook-network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  psychoworkbook-network:
+    driver: bridge
