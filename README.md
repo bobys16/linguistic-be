@@ -1,6 +1,22 @@
-# Psycholinguistics Workbook Backend
+# Digital Psycholinguistics Workbook - Backend
 
-A production-ready backend API for a Digital Psycholinguistics Workbook application.
+A production-ready REST API backend for the Digital Psycholinguistics Workbook, an educational platform designed for Master's degree students in English Language Teaching (ELT) and Applied Linguistics programs.
+
+## About This Project
+
+This application serves as an interactive learning tool for advanced psycholinguistics concepts, focusing on four core cognitive areas essential for language acquisition and processing:
+
+- **Working Memory**: Tasks measuring digit span and reading span capacity
+- **Processing Speed**: Lexical decision and sentence verification exercises
+- **Noticing**: Form-meaning mapping and error correction activities
+- **Reflective Practice**: Guided and free reflection prompts for metacognitive development
+
+Developed by **Bondan Charisnanda** for linguistics coursework in Master's degree ELT programs.
+
+## Related Repositories
+
+- **Frontend:** [linguistic-fe](https://github.com/bobys16/linguistic-fe) - React-based user interface
+- **Backend:** [linguistic-be](https://github.com/bobys16/linguistic-be) - This repository
 
 ## Features
 
@@ -291,6 +307,45 @@ After seeding, a demo account is available:
 6. Set up database backups
 7. Configure logging and monitoring
 8. Use a process manager (PM2, systemd)
+
+## Task Types
+
+The backend supports 8 distinct task types with 3 difficulty levels each (24 total tasks):
+
+### Working Memory Module
+1. **Digit Span** - Remember sequences of 2-8 digits
+2. **Reading Span** - Recall words while processing sentences
+
+### Processing Speed Module
+3. **Lexical Decision** - Identify real vs. pseudo-words rapidly
+4. **Sentence Verification** - Judge sentence correctness quickly
+
+### Noticing Module
+5. **Form-Meaning Mapping** - Match grammatical forms to meanings
+6. **Error Correction** - Identify and correct grammatical errors
+
+### Reflective Practice Module
+7. **Guided Reflection** - Respond to specific prompts
+8. **Free Reflection** - Open-ended journaling (100-300 words)
+
+## Educational Context
+
+This tool aligns with key psycholinguistic theories:
+- **Working Memory Models** (Baddeley & Hitch)
+- **Processing Speed Theory** in L2 acquisition
+- **Schmidt's Noticing Hypothesis**
+- **Metacognitive Awareness** in language learning
+
+Ideal for:
+- Master's students in TESOL/Applied Linguistics
+- Psycholinguistics coursework
+- Research on cognitive aspects of language learning
+- Self-paced learning and assessment
+
+## Author
+
+**Bondan Charisnanda**  
+Master's degree student in English Language Teaching
 
 ## License
 
